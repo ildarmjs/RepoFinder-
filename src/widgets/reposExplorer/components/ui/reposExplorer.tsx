@@ -32,7 +32,7 @@ export const ReposExplorer = () => {
         first: 10,
       },
       notifyOnNetworkStatusChange: true,
-      skip: !login,
+      skip: !searchLogin,
     });
 
   const repos = data?.repositoryOwner?.repositories.nodes;
@@ -112,7 +112,9 @@ export const ReposExplorer = () => {
         </InfiniteScroll>
       )}
 
-      {!loading && !repos?.length && !!login && <p>Репозитории не найдены</p>}
+      {!loading && !repos?.length && !!searchLogin && (
+        <p>Репозитории не найдены</p>
+      )}
       {loading && <Spinner className="self-center" />}
     </div>
   );
