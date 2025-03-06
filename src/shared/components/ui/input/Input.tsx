@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { cn } from '@/shared/lib/utils';
-import { Label } from './Label';
+import { cn } from '@/shared/lib';
 import { ReactNode } from 'react';
+import { Label } from '../label';
 
 interface Props extends React.ComponentProps<'input'> {
   name: string;
