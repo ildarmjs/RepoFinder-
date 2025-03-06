@@ -4,12 +4,12 @@ import { cn } from '@/shared/lib';
 import { ReactNode } from 'react';
 import { Label } from '../label';
 
-interface Props extends React.ComponentProps<'input'> {
+interface InputProps extends React.ComponentProps<'input'> {
   name: string;
   label: ReactNode;
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, name, id = name, label, ...props }, ref) => {
     return (
       <div>

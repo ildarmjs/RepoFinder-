@@ -1,17 +1,22 @@
 import { formatDate } from '@/shared/utils';
 import { RepositoryFragment } from '../gql/fragments/repository.graphql';
+import Link from 'next/link';
 
-interface Props {
+interface RepoCardProps {
   repo: RepositoryFragment;
 }
 
-export const RepoCard = ({ repo }: Props) => {
+export const RepoCard = ({ repo }: RepoCardProps) => {
   return (
     <div className="flex p-4 prose border rounded-lg">
       <div className=" flex-1">
-        <a href={repo.url} className="text-lg font-bold hover:underline">
+        <Link
+          href={repo.url}
+          target="_blank"
+          className="text-lg font-bold hover:underline"
+        >
           {repo.name}
-        </a>
+        </Link>
         {repo.description && (
           <p className="text-sm text-slate-500 mt-2">{repo.description}</p>
         )}
